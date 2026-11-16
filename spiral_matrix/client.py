@@ -14,7 +14,7 @@ class MatrixFormatError(Exception):
     """Сервер ответил, но это не квадратная матрица из чисел."""
 
 
-async def get_matrix(url: str, timeout: float = 10) -> List[int]:
+async def get_matrix(url: str) -> List[int]:
     try:
         client_timeout = aiohttp.ClientTimeout(total=timeout)
         async with aiohttp.ClientSession(timeout=client_timeout) as session:
